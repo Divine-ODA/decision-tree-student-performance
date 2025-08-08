@@ -1,0 +1,83 @@
+Title: Predicting Student Performance with Decision Trees  
+
+Author: Divine Akanji 
+
+Date: August 7, 2025 
+
+ 
+
+This project is an investigation of how a decision tree machine learning algorithm can be used to predict students' performance based on background, academic, and social factors. I developed this model to further my machine learning journey, following an interest in the philosophies of Symbolists, described in “The Master Algorithm” by Pedro Domingos. Symbolists believe that learning is a process of reasoning, discovering knowledge through logic and inference, particularly inverse deduction, ergo this project, an extension of this belief.  
+
+ 
+
+There were two aims of the project. First, to build a working, practical model that accurately classifies whether students are likely to pass or to fail. Secondly, to emulate and explore how a symbolic learning constructs knowledge through rule-based inference.  
+
+ 
+
+Dataset and Problem formulation  
+
+The dataset used in this project is the Student Performance Data Set from the UCI Machine Learning Repository. It contains records from two Portuguese secondary schools. It contains features such as parental education, travel time, previous failures, school support and student absences.  
+
+However, I formulated the Problem as a binary classification task, falling under Supervised Learning. The task in question: predict whether a student passes or fails based on the available attributes. A student was considered to have passed if their final grade (the average of G1, G2, G3) was greater than or equal to 10. 
+
+ 
+
+Preprocessing and Feature Engineering 
+
+In order to avoid data leakage (unlikely, but necessary), the grade columns (G1, G2, G3) were removed from the training features and a new binary column was created as the new target label (Pass). Categorical variables were encoded using one-hot encoding, transforming them to numerical values. Numerical features were left as they were.  
+
+The dataset was then split into 80% training data and 20% test data, ensuring the typical 80:20 ratio. The model applied was a DecisionTreeClassifier from the scikit-learn. The tree depth was limited to 4 to ensure the model was interpretable, and intuitive. 
+
+ 
+
+Model Design Motivation  
+
+The decision tree is a machine learning algorithm that embodies clarity and structure. In contrast to opaque machine learning algorithms like neural networks, decision trees provide direct insight into not only how but why decisions are made, relating each decision to another, paving the way through the darkness and into the illumination that knowledge provides. Each path in the tree is easily followed, representing a sequence of logical decisions. This property makes it the paragon of the exploration of the Symbolist viewpoint of machine learning.  
+
+I aimed to maximise this clarity throughout the model, limiting the depth to four and ensuring that the model remained readable, making it much easier to reveal useful insights about the real and relevant features that could influence the success of a student whilst capturing key interactions within the data.  
+
+ 
+
+Results and Interpretation  
+
+ 
+
+The decision tree produces approximately 95% accuracy on the training data and 80% on the test set. This discrepancy may suggest minor overfitting which is insignificant and not likely to undermine the general utility, but also surprising due to the relatively small dataset.  
+
+The largest split in the tree was on the “failures” feature. Students who had not previously failed a class were much more likely to pass. This was typically and logically expected.  
+
+The second most important feature was “absences”. The students who missed fewer classes were also more likely to succeed. Other informative features included whether the student had received support from school, their amount of free time, their guardian’s identity, and the amount of time they may have spent travelling to school. 
+
+ One particularly interesting observation was that students who received additional paid classes did not necessarily perform better. This suggests that not all forms of academic support are equally useful, also suggesting that attitudes towards learning in school are reflected also in other forms of learning.  
+
+ 
+
+ 
+
+Evaluation and Limitations  
+
+The model was evaluated using accuracy on the test set, which resulted in about 80%.  
+
+This is a reasonable level of performance given the model’s simplicity and the limitations causing inaccuracies. This includes: 
+
+Skewed performance, with more students passing than failing, possibly biasing the model toward predicting “pass”. 
+
+Labling categories through binary may have simplified the problem, possible ignoring nuances in performance.  
+
+Decision trees are known to be somewhat unstable for small changes in data. A random forest might make it more robust.  
+
+ 
+
+Theoretical Context 
+
+The Symbolist tribe heavily inspired this project. The Symbolists are large advocates of learning through inverse deduction, or induction, which involves working backwards from the outcome and inferring overall rules. Decision trees operate directly in this way. They analyse training data to extract a logic structure of IF- THEN rules, describing how the inputs relate to the output. This kind of transparent rulemaking is what makes symbolic learning methods not just powerful, but interpretable, explainable and vigorous.  
+
+ 
+
+Reflections and Moving Forward 
+
+This project provided a hands-on opportunity to seize the fundamental machine learning skills I have developed coupled with applying the symbolic learning to a real-world problem. It displayed that a machine learning model can be both comprehensive and functional, and how theory can shape practical algorithms, through discovering deterministic rule-based models (symbolist-like), Data Preprocessing Theory and Evaluation Metrics. 
+
+The next Step is to experiment with ensemble models and compare the suitability, performance and philosophy of learning.  
+
+Overall, this project has deepened my understanding of how symbolic models learned and demonstrated how machine learning models learning can be used predict, explain and understand.  
