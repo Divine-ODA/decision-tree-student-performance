@@ -11,7 +11,7 @@ The project investigates how a Decision Tree classifier can predict whether stud
 ## Contents
 - **notebook/** – Jupyter Notebook with full code and model.
 - **data/** – Dataset used (Student Performance Data Set from UCI ML Repository).
-- **visuals/** – Decision tree diagram, confusion matrix, and feature importance plot.
+- **visuals/** – Decision tree diagram, confusion matrix.
 - **blog.md** – Detailed write-up of the project.
 
 ---
